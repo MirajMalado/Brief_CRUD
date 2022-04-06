@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('proprietaire', function (Blueprint $table) {
-            $table->string('id')->primary();
+            $table->string('id_proprietaire')->primary();
             $table->string('prenom');
             $table->string('nom');
             $table->string('civilite');
@@ -24,8 +24,6 @@ return new class extends Migration
             $table->string('addresse');
             $table->string('nationalite');
             $table->string('contact');
-            
-            
             $table->timestamps();
         });
     }

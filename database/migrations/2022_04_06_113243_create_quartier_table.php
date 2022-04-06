@@ -13,11 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('propriete', function (Blueprint $table) {
-            $table->string('id')->primary();
-            $table->string('nom');
-            $table->string('type');
-            $table->string('taux_prestation');
+        Schema::create('quartier', function (Blueprint $table) {
+            $table->string('quartier_id')->primary();
+            $table->string('libelle');
+            $table->string('idCommune');
+
+            $table->foreign('idCommune')->references('id_commune')->on('commune');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('propriete');
+        Schema::dropIfExists('quartier');
     }
 };
